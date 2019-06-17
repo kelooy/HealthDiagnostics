@@ -1,0 +1,35 @@
+<resources>
+
+    // NAZWY activity_baza
+    <string name="app_name">HealthDiagnostics</string>
+    <string name="imie">Imię</string>
+    <string name="nazwisko">Nazwisko</string>
+    <string name="waga">Waga</string>
+    <string name="wzrost">Wzrost</string>
+    <string name="talia">Obwód talii</string>
+    <string name="pick_date">Ustaw datę</string>
+    <string name="oblicz">OBLICZ</string>
+    <string name="dodaj_pacjenta">DODAJ</string>
+    <string name="powrot">WRÓĆ</string>
+
+    <string-array name="wzrost_opcje">
+        <item>cm</item>
+        <item>m</item>
+    </string-array>
+
+    <string-array name="PPM_opcje">
+        <item>Benedicta-Harrisa</item>
+        <item>Mifflina</item>
+    </string-array>
+
+    <string-array name="plec_opcje">
+        <item>M</item>
+        <item>K</item>
+    </string-array>
+
+    // NAZWY activity_main
+    <string name="wyswietl">WYŚWIETL BAZĘ DANYCH</string>
+    <string name="wprowadz">WPROWADŹ PACJENTA DO BAZY</string>
+    <string name="wyczysc">WYCZYŚĆ BAZĘ DANYCH</string>
+
+</resources>

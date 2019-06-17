@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HealthDiagnostics</string>
+    <string name="dodaj_pacjenta">" Zur Datenbank hinzufügen"</string>
+    <string name="imie">Vorname</string>
+    <string name="nazwisko">Nachname</string>
+    <string name="oblicz">BERECHNEN</string>
+    <string name="pick_date">Stellen Sie das Datum ein</string>
+    <string name="powrot">Zurück!</string>
+    <string name="talia">Taillenweite</string>
+    <string name="waga">Gewicht</string>
+    <string name="wprowadz">Betreten Sie den neuen Patienten</string>
+    <string name="wyczysc">Löschen Sie die Datenbank</string>
+    <string name="wyswietl">Zeigen Sie die Datenbank an</string>
+    <string name="wzrost">Wachstum</string>
+</resources>

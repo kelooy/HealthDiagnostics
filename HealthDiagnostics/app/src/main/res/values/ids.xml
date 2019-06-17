@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="opcjaWzrostu" type="id" />
+    <item name="opcjaPPM" type="id" />
+    <item name="opcjaPlec" type="id" />
+    <item name="bntPickDate" type="id" />
+    <item name="talia" type="id" />
+    <item name="wzrost" type="id" />
+    <item name="masa" type="id" />
+    <item name="WYNIK" type="id" />
+</resources>

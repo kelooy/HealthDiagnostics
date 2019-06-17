@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HealthDiagnostics</string>
+    <string name="imie">Name</string>
+    <string name="nazwisko">Surname</string>
+    <string name="oblicz">CALCULATE</string>
+    <string name="pick_date">Birthday date</string>
+    <string name="powrot">RETURN</string>
+    <string name="talia">Waist width</string>
+    <string name="waga">Weight</string>
+    <string name="wzrost">Height</string>
+    <string name="wprowadz">INSERT NEW PATIENT</string>
+    <string name="wyczysc">CLEAR DATABASE</string>
+    <string name="wyswietl">SHOW DATABASE</string>
+    <string name="dodaj_pacjenta">ADD PATIENT</string>
+</resources>
