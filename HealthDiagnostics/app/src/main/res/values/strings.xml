@@ -7,7 +7,7 @@
     <string name="waga">Waga</string>
     <string name="wzrost">Wzrost</string>
     <string name="talia">Obwód talii</string>
-    <string name="pick_date">Ustaw datę</string>
+    <string name="dodaj_date">Ustaw datę urodzenia</string>
     <string name="oblicz">OBLICZ</string>
     <string name="dodaj_pacjenta">DODAJ</string>
     <string name="powrot">WRÓĆ</string>
@@ -31,5 +31,10 @@
     <string name="wyswietl">WYŚWIETL BAZĘ DANYCH</string>
     <string name="wprowadz">WPROWADŹ PACJENTA DO BAZY</string>
     <string name="wyczysc">WYCZYŚĆ BAZĘ DANYCH</string>
+
+    // NAZWY activity_login
+    <string name="zatwierdz">ZATWIERDŹ PIN</string>
+    <string name="licznik" translatable="false">3 attempts left...</string>
+    <string name="tytul" translatable="false">HealthDiagnostics</string>
 
 </resources>
