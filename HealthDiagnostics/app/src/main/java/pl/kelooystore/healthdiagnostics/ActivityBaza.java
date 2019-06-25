@@ -1,6 +1,7 @@
 package pl.kelooystore.healthdiagnostics;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,6 +14,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.Random;
@@ -21,7 +24,7 @@ public class ActivityBaza extends AppCompatActivity {
     Calendar c;
     DatePickerDialog dpd;
     SQLiteDatabase base;
-    int i=0; // ID iterator
+    int id=0; // ID iterator
 
 
     public SQLiteDatabase getBase() {
@@ -37,14 +40,16 @@ public class ActivityBaza extends AppCompatActivity {
 
 
     public void onClickAdd(View view) {
-        Random iter = new Random();
-        i=iter.nextInt(100000); // Nadawanie ID
+        Random random = new Random();
+        id = random.nextInt(100000) - random.nextInt(100) + random.nextInt(99); // Nadawanie ID
         addUser();
+        addToast();
     }
 
 
     public void addUser() {
         base = openOrCreateDatabase("PATIENTS", MODE_PRIVATE, null);
+
         try {
             String sqlDiagnostics = "CREATE TABLE IF NOT EXISTS PATIENTS (Id INTEGER, Imie VARCHAR, Nazwisko VARCHAR, Wyniki VARCHAR)";
             base.execSQL(sqlDiagnostics);
@@ -60,11 +65,13 @@ public class ActivityBaza extends AppCompatActivity {
 
             String sqlPacjent = "INSERT INTO PATIENTS VALUES(?,?,?,?)";
             SQLiteStatement statement = base.compileStatement(sqlPacjent);
-            statement.bindLong(1, i); // ID
+            statement.bindLong(1, id); // ID
             statement.bindString(2, name.getText().toString());
             statement.bindString(3, surname.getText().toString());
             statement.bindString(4, wyniki.getText().toString());
             statement.executeInsert();
+
+            finish();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -72,6 +79,16 @@ public class ActivityBaza extends AppCompatActivity {
         } finally {
             base.close();
         }
+    }
+
+
+    private void addToast() {
+        CharSequence text = "Patient added!";
+        int duration = Toast.LENGTH_LONG;
+        Context context = getApplicationContext();
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
 
@@ -89,7 +106,6 @@ public class ActivityBaza extends AppCompatActivity {
         EditText poleWzrost = (EditText) findViewById(R.id.wzrost);
         EditText poleMasa = (EditText) findViewById(R.id.masa);
         EditText poleTalia = (EditText) findViewById(R.id.talia);
-
 
         try {   // EKSPERTYZA // DIAGNOZA //
             double wzrost = Double.valueOf(poleWzrost.getText().toString());

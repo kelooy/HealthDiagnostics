@@ -5,7 +5,6 @@
     <string name="imie">Vorname</string>
     <string name="nazwisko">Nachname</string>
     <string name="oblicz">BERECHNEN</string>
-    <string name="pick_date">Stellen Sie das Datum ein</string>
     <string name="powrot">Zurück!</string>
     <string name="talia">Taillenweite</string>
     <string name="waga">Gewicht</string>
@@ -13,4 +12,6 @@
     <string name="wyczysc">Löschen Sie die Datenbank</string>
     <string name="wyswietl">Zeigen Sie die Datenbank an</string>
     <string name="wzrost">Wachstum</string>
+    <string name="zatwierdz">" Bestätigen PIN"</string>
+    <string name="dodaj_date">Geburtsdatum einstellen</string>
 </resources>

@@ -1,5 +1,6 @@
 package pl.kelooystore.healthdiagnostics;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -10,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ActivityBaza activityBaza = new ActivityBaza();
         database = activityBaza.getBase();
         database = openOrCreateDatabase("PATIENTS",MODE_PRIVATE,null);
@@ -28,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onClickShow(View view) {
-
         ArrayList<String> records = new ArrayList<>();
         Cursor cursor = database.rawQuery("SELECT Id, Imie, Nazwisko, Wyniki FROM PATIENTS", null);
 
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
             } while (cursor.moveToNext());
         }
+
         ListView listView = (ListView) findViewById(R.id.listView);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, records);
         listView.setAdapter(adapter);
@@ -81,8 +85,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
                 deleteData();
+                refreshActivity();
+                deleteToast();
             }
         });
+
         AlertDialog alert = builder.create();
         alert.show();
     }
@@ -92,5 +99,21 @@ public class MainActivity extends AppCompatActivity {
     {
         String sqlDoesNotExist = "DELETE FROM PATIENTS WHERE id IS NOT NULL";
         database.execSQL(sqlDoesNotExist);
+    }
+
+
+    public void refreshActivity(){
+        finish();
+        startActivity(getIntent());
+    }
+
+
+    private void deleteToast() {
+        CharSequence text = "Base cleared!";
+        int duration = Toast.LENGTH_LONG;
+        Context context = getApplicationContext();
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 }
